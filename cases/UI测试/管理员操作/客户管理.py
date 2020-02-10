@@ -6,10 +6,7 @@ class c2:
 
     # 测试用例步骤
     def teststeps(self):
-
-        STEP(1, '登陆网站')
-        wd=open_browser()
-        mgr_login(wd)
+        
        
 
         STEP(2, '点击左侧客户菜单')
@@ -73,4 +70,4 @@ class c2:
                     texts == expected)
 
 
-        wd.quit()
+
