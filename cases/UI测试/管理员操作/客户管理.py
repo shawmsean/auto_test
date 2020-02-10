@@ -28,7 +28,7 @@ class c2:
         # form-contorl 对应3个输入框
         inputs = wd.find_element_by_class_name('add-one-area') \
             .find_elements_by_class_name('form-control')
-
+        sleep(1)
         # 输入客户姓名
         inputs[0].send_keys('南京中医院')
         # 输入联系电话
