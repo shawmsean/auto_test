@@ -1,16 +1,16 @@
 from hyrobot.common import *
 from selenium import webdriver
 from lib.webui import *
+
+
 class c2:
     name = '管理员首页 - UI-0102'
 
     # 测试用例步骤
     def teststeps(self):
-        
-       
 
         STEP(2, '点击左侧客户菜单')
-
+        wd=get_global_webdriver()
         # 先找到上层节点，缩小查找范围
         sidebarMenu = wd.find_element_by_class_name('sidebar-menu')
 
@@ -19,7 +19,6 @@ class c2:
 
         # 第一个span对应的菜单是 客户，点击它
         elements[0].click()
-
 
         STEP(3, '添加客户')
 
@@ -45,7 +44,6 @@ class c2:
         # 等待1秒
         sleep(1)
 
-
         STEP(4, '检查添加信息')
 
         # 找到 列表最上面的一栏
@@ -58,16 +56,8 @@ class c2:
 
         # 预期内容为
         expected = [
-            '客户名：',
-            '南京中医院',
-            '联系电话：',
-            '2551867858',
-            '地址：',
+            '客户名：', '南京中医院', '联系电话：', '2551867858', '地址：',
             '江苏省-南京市-秦淮区-汉中路-16栋504'
         ]
 
-        CHECK_POINT('客户信息和添加内容一致 ',
-                    texts == expected)
-
-
-
+        CHECK_POINT('客户信息和添加内容一致 ', texts == expected)
