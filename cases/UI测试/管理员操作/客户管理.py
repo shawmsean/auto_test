@@ -173,9 +173,10 @@ class c4:
         STEP(5,"返回主页面")
         wd.switch_to.window(main_window)
         wd.get_screenshot_as_file(r"G:\自动测试\screenshots\a2.png")
-        mgrbtn=wd.find_element_by_class_name("hidden-xs").click()
+        wd.find_element_by_class_name("hidden-xs").click()
         wd.find_element_by_xpath("/html/body/div[1]/header/nav/div/ul/li[2]/ul/li[3]/div[2]/a").click()
         sleep(3)
         cur_url = wd.current_url
-        print(main_url,"\n",cur_url)
+        print(main_url)
+        print(cur_url)
         CHECK_POINT("检查是否返回主页",main_url==cur_url)
